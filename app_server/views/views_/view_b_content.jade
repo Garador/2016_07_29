@@ -1,0 +1,20 @@
+extends ../layouts_/viewB
+block content
+	p Hey there! Second page beatches!!
+	table.table.table-hover
+		each item, key in ListOfThings
+			tr
+				td
+					span= item.title
+				td
+					img.img-responsive.img-rounded(src=item.img_url)
+				td
+					a(href=item.url) El URL
+				td
+					-for (var a=0;a<item.score;a++)
+						span.glyphicon.glyphicon-star
+					-for (var a=item.score;a<5;a++)
+						span.glyphicon.glyphicon-star-empty
+			tr
+				td(colspan='4')
+					p= item.description

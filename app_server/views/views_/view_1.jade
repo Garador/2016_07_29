@@ -1,0 +1,18 @@
+extends ../layouts_/viewA.jade
+block content
+	-var which = 1
+	include ../layouts_/menuBar.jade
+	h1 Hey there! First view.
+	mixin include_view_1_item(img_url, img_title, item_title, item_price, item_desc, distance)
+		include ./view_1_itemA.jade
+	col-xs-12.col-md-6
+		table.table
+			-each product, value in productsInfo
+				+include_view_1_item(product.img_src, product.img_alt, product.title, product.price, product.description, product.distance)
+			tfoot
+				td(colspan='3', style='text-align:center')
+					span.glyphicon.glyphicon-arrow-left.pull-left.btn.btn-success
+					span 1/20
+					span.glyphicon.glyphicon-arrow-right.pull-right.btn.btn-success
+	.col-xs-12.col-md-6
+		img.img-responsive.img-rounded(src='//www.beevoz.com/wp-content/uploads/2014/07/Google-Maps.gif', style={margin: "0 auto"})

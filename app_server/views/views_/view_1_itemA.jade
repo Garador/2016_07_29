@@ -1,0 +1,10 @@
+tr
+	td.col-xs-4
+		img(src=img_url, alt=img_title).img.img-responsive.img-rounded.pull-left
+	td.col-xs-6
+		span.label.label-warning.pull-right(style={color:'black'})= item_price
+		h3= item_title
+		p=item_desc
+	td.col-xs-2
+		h3(style={color: 'yellow'}) #{distance}		
+		h5 From you
